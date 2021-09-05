@@ -1,0 +1,29 @@
+<section class="container m-5 ">
+    <div class="row ">
+        <div class="col-sm-7">
+         <img style="width: 32rem;" src="../../../assets//images/Login-bro.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-sm-5">
+            <br>
+            <br>
+            <br>
+            <br>
+            <form (ngSubmit)="signUp(signup)" #signup='ngForm' [formGroup]=loginForm class="mt-5" action="">
+                <input placeholder="Enter email" formControlName="email" class="form-control input-boxes" type="email"
+                [ngClass]="{'is-invalid':loginForm.get('email')?.touched && loginForm.get('email')?.invalid}"
+                >
+                <div class="invalid-feedback">
+                    Email required
+                </div>
+                
+                <input placeholder="Password" class="form-control input-boxes mt-4" formControlName="password" type="password"
+                [ngClass]="{'is-invalid':loginForm.get('password')?.touched && loginForm.get('password')?.invalid}"
+                >
+                <div class="invalid-feedback">
+                    Password required
+                </div>
+                <button type="submit" [disabled]="!loginForm.valid" class="btn login-button form-control mt-4" >Log in</button>
+            </form>
+        </div>
+    </div>
+</section>

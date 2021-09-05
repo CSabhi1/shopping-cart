@@ -1,0 +1,42 @@
+<div *ngIf="selectedItem" class="container details-container">
+    <div class="row">
+        <div class="col-5">
+            <img class="img-fluid product-detail-img" [src]="selectedItem?.image" alt="">
+        </div>
+        <div class="col-7">
+            <p>{{selectedItem?.category}}</p>
+            <h5>{{selectedItem?.title}}</h5>
+            <p>{{selectedItem?.description}}</p>
+            <br>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    <p class="details-price pb-0 mb-0"> &#x20b9; {{selectedItem?.price}} <span class="details-piece">/
+                            piece</span> </p>
+                </div>
+
+                <div class="col-6">
+                    <rating style="color: rgb(177, 177, 4); font-size: 24px;" [ngModel]="selectedItem?.rating.rate"
+                        max="5" readonly="true"></rating> &nbsp;
+                    <span style="font-size: 14px; color: rgb(78, 78, 78);">
+                        ({{selectedItem?.rating.rate}}) &nbsp; {{selectedItem?.rating.count}} Reviews
+                    </span>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    <button class="btn-add-cart form-control mt-3" (click)="addToCart(selectedItem)">Add to
+                        cart</button>
+                </div>
+
+                <div class="col-6">
+                    <button class="btn-add-cart form-control mt-3" routerLink="/cart" >View
+                        cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ngx-spinner></ngx-spinner>

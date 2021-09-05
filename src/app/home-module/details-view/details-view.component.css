@@ -1,0 +1,23 @@
+.product-detail-img{
+    width: 300px;
+    height: 400px;
+}
+.details-container{
+    margin-top: 70px;
+}
+.details-price{
+    font-size: 32px;
+    font-weight: 700;
+    color: rgb(39, 39, 122);
+}
+.details-piece{
+    font-size: 17px;
+    font-weight: 400;
+    color: rgb(77, 77, 77);
+}
+
+.btn-add-cart{
+    font-size: 15px;
+    background-color: rgb(23, 23, 77);
+    color: white;
+  }
