@@ -22,6 +22,8 @@ import { environment } from 'src/environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BarRatingModule } from "ngx-bar-rating";
 import { CartService } from './home-module/cart.services';
+import { LocationStrategy } from '@angular/common';
+import { HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,7 @@ import { CartService } from './home-module/cart.services';
     NgxSpinnerModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [AuthService,ProductDataService,CartService],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy },AuthService,ProductDataService,CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
