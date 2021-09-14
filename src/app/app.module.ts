@@ -24,6 +24,7 @@ import { BarRatingModule } from "ngx-bar-rating";
 import { CartService } from './home-module/cart.services';
 import { LocationStrategy } from '@angular/common';
 import { HashLocationStrategy } from '@angular/common';
+import { FooterComponent } from './navigation/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { HashLocationStrategy } from '@angular/common';
     ListViewComponent,
     DetailsViewComponent,
     CartComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

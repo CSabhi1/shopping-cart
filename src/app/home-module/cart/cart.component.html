@@ -1,47 +1,52 @@
 <div *ngIf="products.length>0" class="container mt-5">
-    <h5>Your cart : {{products.length}} items</h5>
+    <h6>Your cart : {{products.length}} items</h6>
     <br>
     <div class="row">
-        <div class="col-8" >
-            <div class="row mt-3 mb-3 pt-2 pb-2" *ngFor="let item of products" style="border-bottom: 1px solid rgb(230, 230, 230);">
-                
-                    <div class="col-3">
-                        <img style="width: 100px; height: 120px;" [src]="item?.image"
-                            class="card-img-top img-fluid text-center" alt="...">
-                    </div>
-                    <div class="col-6">
-                        <p>{{item?.category}}</p>
-                        <h5>{{item?.title}}</h5>
-                    </div>
-    
-                    <div class="col-3">
-                        <p class="card-price pb-0 mb-0 float-right"> &#x20b9; {{item?.price}} </p>
-                    </div>
+        <div class="col-8">
+            <div class="row mt-3 mb-3 pt-2 pb-2" *ngFor="let item of products"
+                style="border-bottom: 1px solid rgb(230, 230, 230);">
+
+                <div class="col-3">
+                    <img style="width: 80px; height: 100px;" [src]="item?.image"
+                        class="card-img-top img-fluid text-center" alt="...">
+                </div>
+                <div class="col-5">
+                    <p>{{item?.category}}</p>
+                    <h5>{{item?.title}}</h5>
+                </div>
+
+                <div class="col-3">
+                    <p class="card-price pb-0 mb-0 float-right"> &#x20b9; {{item?.price}} </p>
+                </div>
+                <div class="col-1">
+                    <i style="color: rgb(177, 6, 6);" (click)="removeItemFromCart(item.id)" class="far fa-trash-alt"></i>
+                </div>
             </div>
-            
+
         </div>
         <div class="col-1">
 
         </div>
         <div class="col-3 float-right">
-            <ul >
-                <li >
-                    <p >Sub total &#x20b9; {{subTotal}} <span> {{products.length}} items</span> </p>
+            <ul class="list-unstyled">
+                <li class="price-items">
+                    <p> <span class="sub-total">Sub total :</span> <span class="sub-price"> &#x20b9; {{subTotal}}</span> <span class="itemsof">({{products.length}}
+                            items)</span> </p>
                 </li>
-                <li>
-                    <p >Delivery charge &#x20b9; 50  </p>
+                <li class="price-items">
+                    <p> <span class="delivery-charge"> Delivery charge :</span>  <span class="sub-price"> &#x20b9; 50</span>  </p>
                 </li>
-                <li>
-                    <p >Total &#x20b9; {{total}}  </p>
+                <li class="price-items">
+                    <p> <span class="total-text"> Total :</span> <span class="total-price"> &#x20b9; {{total}}</span> </p>
                 </li>
             </ul>
 
-            <button class="form-control">Check out</button>
+            <button class="form-control checkout-btn" >Check out</button>
 
         </div>
     </div>
-  
+
 </div>
 <div *ngIf="products.length==0" class="container">
-    <p  class=" mt-5">Cart is empty</p>
+    <p class=" mt-5">Cart is empty</p>
 </div>
