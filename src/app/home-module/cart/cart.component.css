@@ -3,3 +3,43 @@
     font-weight: 700;
     color: rgb(39, 39, 122);
 }
+.sub-total{
+    font-size: 1.1rem;
+    font-family: 'Open Sans', sans-serif;
+}
+.delivery-charge{
+    font-size: 1.1rem;
+    font-family: 'Open Sans', sans-serif; 
+}
+.sub-price{
+    font-size: 1.2rem;
+    font-family: 'Open Sans', sans-serif; 
+    color: rgb(39, 39, 122);
+    font-weight: 500;
+}
+.itemsof{
+    font-size: 12px;
+}
+.total-text{
+    font-size: 1.3rem;
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: 700;
+}
+.total-price{
+    font-size: 1.35rem;
+    font-family: 'Open Sans', sans-serif; 
+    color: rgb(39, 39, 122);
+    font-weight: 700;
+}
+.checkout-btn{
+    background-color: #2941CA;
+    border-radius: 5px;
+    font-size: .9rem;
+    height: 45px;
+    color: white;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-box-shadow: 10px 10px 33px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 10px 10px 33px 0px rgba(0,0,0,0.16);
+    box-shadow: 10px 10px 33px 0px rgba(0,0,0,0.16);
+}

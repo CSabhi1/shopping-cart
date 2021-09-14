@@ -17,6 +17,10 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.getToatalItems();
+    this.cartService.cartItemsChanged.subscribe(newCartItems => {
+      this.products = newCartItems;
+      this.calculateTotal(this.products);
+    })
   }
 
   getToatalItems() {
@@ -27,9 +31,12 @@ export class CartComponent implements OnInit {
   calculateTotal(products: Product[]) {
     this.subTotal = 0;
     products.forEach((item) => {
-      this.subTotal += item.price;
+      this.subTotal += Math.round(item.price);
     })
-    this.total = this.subTotal + 50;
+    this.total = Math.round(this.subTotal + 50);
+  }
 
+  removeItemFromCart(id:number){
+    this.cartService.removeItemFromCart(id);
   }
 }

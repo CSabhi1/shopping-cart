@@ -1,8 +1,8 @@
 <section class="container m-5 ">
     <form (ngSubmit)="registerUser(register)" #register='ngForm' [formGroup]=registerForm class="mt-5" action="">
         <div class="row ">
-            <div class="col-6">
-                <p class="label">Personal info</p>
+            <div class="col-6 p-4">
+                <p class="label pb-2">Personal info</p>
                 <div class="form-row ">
                     <div class="col">
                         <input type="text" formControlName="firstName" class="form-control input-boxes"
@@ -51,10 +51,10 @@
                 <button type="submit" [disabled]="!registerForm.valid"
                     class="btn login-button form-control mt-4">Register</button>
             </div>
-            <div class="col-6">
+            <div class="col-6 p-4">
                 <div formArrayName="address" style="height: 70vh; overflow: auto; overflow-x: hidden; ">
-                    <p class="label">Address <span style="cursor: pointer;" (click)="addAddress()">
-                           &nbsp; <img style="width: 20px;" src="https://img.icons8.com/ios-glyphs/90/000000/plus.png" />
+                    <p class="label pb-2">Address <span style="cursor: pointer;" (click)="addAddress()">
+                           &nbsp; <i style="color:  #2941CA;" class="fas fa-plus"></i>
                         </span>
                     </p>
                     <div class="form-group"
@@ -62,7 +62,7 @@
 
                         <div [formGroupName]="i">
                             <span *ngIf="registerForm.get('address')['controls'].length>1" class="mb-3" (click)="removeAddress(i)" style="cursor: pointer; float: right;">
-                                <img style="width: 20px;" src="https://img.icons8.com/ios-glyphs/90/000000/filled-trash.png"/>
+                                <i style="color: rgb(216, 30, 30);" class="fas fa-minus"></i>
                             </span>
                             <input type="text" class="form-control input-boxes " formControlName="addressLine"
                                 placeholder="Address line"
@@ -89,7 +89,7 @@
                                 </div>
                             </div>
                         </div>
-                        <hr >
+                        <hr *ngIf="registerForm.get('address')['controls'].length>1" >
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import { Subject } from "rxjs";
 export class CartService {
     private cartItems: Product[] = [];
     newItemAdded = new Subject<Product[]>();
+    cartItemsChanged = new Subject<Product[]>();
     totalItem = new Subject<number>();
 
     constructor() { }
@@ -22,5 +23,10 @@ export class CartService {
         this.totalItem.next(this.cartItems.length); 
     }
 
+    removeItemFromCart(id: number) {
+        this.cartItems = this.cartItems.filter(item => item.id !== id);
+        this.cartItemsChanged.next(this.cartItems.slice());
+        this.totalItem.next(this.cartItems.length); 
+    }
 
 }
